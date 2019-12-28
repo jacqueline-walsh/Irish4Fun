@@ -25,12 +25,12 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}"><i class="fa fa-home"></i> Home</a></li>
           {% if session.username %}
-            <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-plus"></i> Storybook</a></li>	
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('storybook') }}"><i class="fa fa-book-reader"></i> Storybook</a></li>	
             <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-user-plus"></i> Profile</a></li>     
-            <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-user"></i> Logout</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}"><i class="fa fa-user"></i> Logout</a></li>
             {% else %}
-            <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-user"></i> Login</a></li>
-            <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-user-plus"></i> Register</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}"><i class="fa fa-user"></i> Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('register') }}"><i class="fa fa-user-plus"></i> Register</a></li>
           {% endif %}      
         </ul>
       </div>

@@ -1,0 +1,63 @@
+{% extends 'layout.html' %}
+
+<!-- main content block -->
+{% block content %}
+<div class="content-section">
+    <form action="{{ url_for('register')}}" method="POST">
+        <fieldset class="form-group">
+            <h1 class="text-center border-bottom mb-4">Register</h1>
+            <br>
+            <!-- teacher checkbox field -->
+            <div class="form-group">
+            <label for="usertype">User Type</label><br/>
+               Teacher: <input id="teacher" name="teacher" type="checkbox" class="ml-4 mr-5">
+               Parent: <input id="parent" name="parent" type="checkbox" class="ml-4">
+            </div>
+            <!-- firstname field -->
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input id="firstname" name="firstname" type="text" class="form-control" required>
+            </div>
+            <!-- lastname field -->
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input id="lastname" name="lastname" type="text" class="form-control" required>
+            </div>
+            <!-- username field -->
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input id="username" name="username" type="text" class="form-control" required>
+            </div>
+            <!-- email field -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" class="form-control" required>
+            </div>
+            <!-- password field -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" class="form-control" required>
+            </div>
+            <!-- confirm password field -->
+            <div class="form-group">
+                <label for="password-confirm">Confirm password</label>
+                <input id="password-confirm" name="password-confirm" type="password" class="form-control" required>
+                <p id="validate-output"></p>
+            </div>
+            <!-- submit button -->
+            <div class="form-group">
+                <div class="row">
+                    <button class="btn btn-danger" type="submit" name="action">submit</button>
+                </div>
+            </div>
+            <!-- link to login page -->
+            <div class="border-top pt-3">
+                <small class="text-muted">
+                    Already have an account?
+                    <a class="ml-2" href="{{ url_for('login') }}">Login</a>
+                </small>
+            </div>
+        </fieldset>
+    </form>
+</div>
+{% endblock content %}
