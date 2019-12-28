@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+<!-- main content block -->
+{% block content %}
+<div class="content-section">
+    <h1 class="text-center">Profile</h1>
+    <hr>
+    <br>
+    <div class="row">
+        <div class="col-md-8">
+            <p>
+                <strong class="pr-3">First Name:</strong> {{ user.firstname }}</p>
+            <p>
+                <strong class="pr-3">Last Name:</strong> {{ user.lastname }}</p>
+            <p>
+                <strong class="pr-3">Username: &nbsp;</strong> {{ user.username }}</p>
+            <p>
+                <strong class="pr-5">Email: &nbsp;</strong> {{ user.email }}</p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

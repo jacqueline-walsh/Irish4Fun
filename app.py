@@ -79,6 +79,15 @@ def logout():
         flash(f'You are now logged out', 'success')
     return redirect(url_for('login'))
 
+# Profile
+@app.route('/profile')
+def profile():
+    if 'username' in session:
+        user = mongo.db.users.find_one({"username": session['username']})
+        return render_template("profile.html", user=user, user_id=user['_id'])     
+    return redirect(url_for('index'))
+
+
 #storybook
 @app.route('/storybook')
 def storybook():

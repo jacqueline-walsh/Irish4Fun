@@ -1,5 +1,495 @@
-{% extends "layout.html" %}
+{% extends 'layout.html' %} {% block head %}
+<script src="{{ url_for('static', filename='extras/jquery.min.1.7.js')}}"></script>
+<script src="{{ url_for('static', filename='extras/modernizr.2.5.3.min.js')}}"></script> {% endblock head %} {% block content %}
+<h2 class="text-center">This storybook has been developed for desktop use only</h2>
+<p class="text-center">click or drag the corners to the turn pages &#9759;</p>
+<div class="flipbook-viewport">
+    <div class="book-container">
+        <div class="flipbook">
+            <!-- front Page -->
+            <img src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/pages/cover.jpg" alt="cover page of Oisin the bookworm">
+            <!-- Page 1 -->
+            <div class="pages page/1 content_page1">
+                <div class="content">
+                    <img src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/pages/content_page1.jpg" width="100%" alt="page 1 Oisin loves to read books">
+                    <p class="left-page">1</p>
+                </div>
+            </div>
+            <!-- Page 2 Content -->
+            <div class="pages page/2 content_page3">
+                <div class="content">
+                    <h1 style="text-align: center">Content</h1>
+                    <table border="0">
+                        <col width="350">
+                        <col width="80">
+                        <tr>
+                            <td>
+                                <a href="javascript:$('.flipbook').turn('page', 4)">Dearg</a>
+                            </td>
+                            <td>3-4</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="javascript:$('.flipbook').turn('page', 6)">Or&#225;iste</a>
+                            </td>
+                            <td>5-6</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="javascript:$('.flipbook').turn('page', 8)">Bu&#237;</a>
+                            </td>
+                            <td>7-8</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="javascript:$('.flipbook').turn('page', 10)">Glas</a>
+                            </td>
+                            <td>9-10</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="javascript:$('.flipbook').turn('page', 12)">Gorm</a>
+                            </td>
+                            <td>11-12</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="javascript:$('.flipbook').turn('page', 14)">Indeag&#243;</a>
+                            </td>
+                            <td>13-14</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="javascript:$('.flipbook').turn('page', 16)">Corcairghorm</a>
+                            </td>
+                            <td>15-16</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="javascript:$('.flipbook').turn('page', 18)">Puzzle No1</a>
+                            </td>
+                            <td>17</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="javascript:$('.flipbook').turn('page', 18)">Puzzle No2</a>
+                            </td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="javascript:$('.flipbook').turn('page', 20)">Puzzle No3</a>
+                            </td>
+                            <td>19</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="javascript:$('.flipbook').turn('page', 20)">Rainbow Poem</a>
+                            </td>
+                            <td>20</td>
+                        </tr>
+                    </table>
+                    <p class="right-page">2</p>
+                </div>
+            </div>
+            <!-- Page 3 Content -->
+            <div class="pages page/3">
+                <div class="content">
+                    <p>O&#237;s&#237;n loves to eat apples and can count 7 red apples on the tree.</p>
+                    <p>Can you count them?</p>
+                    <audio controls class="audio">
+                        <source src="static/audio/Dearg-story.ogg" type="audio/ogg">
+                        <source src="static/audio/Dearg-story.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+                    </audio>
+                    <div class="red-apples" src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/pages/tree_with_apples.png"></div>
+                    <p class="left-page">3</p>
+                </div>
+            </div>
+            <div style="background-color:red">
+                <p style="left: 25px; position: absolute; bottom:25px;">Click on O&#237;s&#237;n to hear the colour
+                    <img src="static/audio/arrow.png" />
+                </p>
+                <img class="oisin" src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/pages/oisin_dearg.png" alt="osisin dearg" value="PLAY"
+                    onclick="playSound(audio)" />
+                <audio id="audio" src="static/audio/Dearg.mp3"></audio>
 
-<!-- main content block -->
-{% block content %}
+                <p class="right-page">4</p>
+            </div>
+            <div class="pages page/6">
+                <div class="content">
+                    <p>Patrick and Joesph are twins, after school they like to play football.</p>
+                    <p>What colour t-shirts are Patrick and Joesph wearing?</p>
+                    <audio controls class="audio">
+                        <source src="static/audio/Oraiste-story.ogg" type="audio/ogg">
+                        <source src="static/audio/Oraiste-story.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+                    </audio>
+                    <img class="football" src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/pages/orange_boys_playing_football.png" />
+                    <p class="left-page">5</p>
+                </div>
+            </div>
+            <div style="background-color:#f85710">
+                <p style="left: 25px; position: absolute; bottom:25px;">Click on O&#237;s&#237;n to hear the colour
+                    <img src="static/audio/arrow.png" />
+                </p>
+                <img class="oisin" src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/pages/oisin_oraiste.png" alt="osisin oráiste" value="PLAY"
+                    onclick="playSound(audio1)" />
+                <audio id="audio1" src="static/audio/Oraiste.mp3"></audio>
+                <p class="right-page">6</p>
+            </div>
+            <div class="pages page/8">
+                <div class="content">
+                    <p>Four little chicks all very different, one likes skipping, one likes
+                        <br> to dance, one likes to sing and the other likes to eat</p>
+                    <p>Hover over the chick that likes to sing?</p>
+                    <audio controls class="audio">
+                        <source src="static/audio/Bui-story.ogg" type="audio/ogg">
+                        <source src="static/audio/Bui-story.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+                    </audio>
+                    <img src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/pages/yellow-chickens.png" style="margin-top:70px;" />
+                    <div class="chick-sing"></div>
+                    <p class="left-page">7</p>
+                </div>
+            </div>
+            <div style="background-color:yellow">
+                <p style="left: 25px; position: absolute; bottom:25px;">Click on O&#237;s&#237;n to hear the colour
+                    <img src="static/audio/arrow.png" />
+                </p>
+                <img class="oisin" src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/pages/oisin_bui.png" alt="osisin buí" value="PLAY"
+                    onclick="playSound(audio2)" />
+                <audio id="audio2" src="static/audio/Bui.mp3"></audio>
+                <p class="right-page">8</p>
+            </div>
+            <div class="pages page/10">
+                <div class="content">
+                    <p>Lots of green clover growing in the grass. If you are lucky you
+                        <br> just might find one hiding</p>
+                    <p>Can you find the four leaf clover?</p>
+                    <audio controls class="audio">
+                        <source src="static/audio/Glas-story.ogg" type="audio/ogg">
+                        <source src="static/audio/Glas-story.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+                    </audio>
+                    <img class="green-clover" src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/pages/green_leaf_clover.png" />
+                    <p class="left-page">9</p>
+                </div>
+            </div>
+            <div style="background-color:green">
+                <p style="left: 25px; position: absolute; bottom:25px;">Click on O&#237;s&#237;n to hear the colour
+                    <img src="static/audio/arrow.png" />
+                </p>
+                <img class="oisin" src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/pages/oisin_glas.png" alt="osisin glas" value="PLAY"
+                    onclick="playSound(audio3)" />
+                <audio id="audio3" src="static/audio/Glas.mp3"></audio>
+                <p class="right-page">10</p>
+            </div>
+            <div class="pages page/12">
+                <div class="content">
+                    <p>The summer is here with beautiful blue skies. Three friends play
+                        <br> happily in the warm blue sea</p>
+                    <p>Hover over the boat, what colour are the sails?</p>
+                    <audio controls class="audio">
+                        <source src="static/audio/Gorm-story.ogg" type="audio/ogg">
+                        <source src="static/audio/Gorm-story.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+                    </audio>
+                    <div class="blue-seas"></div>
+                    <p class="left-page">11</p>
+                </div>
+            </div>
+            <div style="background-color: #4fbce5">
+                <p style="left: 25px; position: absolute; bottom:25px;">Click on O&#237;s&#237;n to hear the colour
+                    <img src="static/audio/arrow.png" />
+                </p>
+                <img class="oisin" src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/pages/oisin_gorm.png" alt="osisin gorm" value="PLAY"
+                    onclick="playSound(audio4)" />
+                <audio id="audio4" src="static/audio/Gorm.mp3"></audio>
+
+                <p class="right-page">12</p>
+            </div>
+            <div class="pages page/14">
+                <div class="content">
+                    <p>Night skies and indigo is the colour. Fires are burning and all the
+                        <br> children are asleep</p>
+                    <p>Hover over the moon and see him smile?</p>
+                    <audio controls class="audio">
+                        <source src="static/audio/Ideago-story.ogg" type="audio/ogg">
+                        <source src="static/audio/Ideago-story.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+                    </audio>
+                    <div class="indego-nights"></div>
+                    <p class="left-page">13</p>
+                </div>
+            </div>
+            <div style="background-color: #161e5d">
+                <p style="left:25px;color: white; position:absolute; bottom:25px;">Click on O&#237;s&#237;n to hear the colour
+                    <img src="static/audio/arrow.png" style="background-color: white; padding:2px; border-radius: 10px" />
+                </p>
+                <img class="oisin" src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/pages/oisin_indeago.png" alt="osisin indeagó" value="PLAY"
+                    onclick="playSound(audio5)" />
+                <audio id="audio5" src="static/audio/Indeago.mp3"></audio>
+
+                <p class="right-page">14</p>
+            </div>
+            <div class="pages page/16">
+                <div class="content">
+                    <p>Beautiful fairy princess with her violet dress and wand. Ready
+                        <br> to grant wishes to all that are good</p>
+                    <p>Close your eyes and make a wish?</p>
+                    <audio controls class="audio">
+                        <source src="static/audio/Violet-story-1.ogg" type="audio/ogg">
+                        <source src="static/audio/Violet-story-1.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+                    </audio>
+                    <img class="fairy" src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/pages/violet_fairy.png" />
+                    <p class="left-page">15</p>
+                </div>
+            </div>
+            <div style="background-color: #8407f8">
+                <p style="left: 25px; position: absolute; bottom:25px;">Click on O&#237;s&#237;n to hear the colour
+                    <img src="static/audio/arrow.png" />
+                </p>
+                <img class="oisin" src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/pages/oisin_corcairghorm.png" alt="osisin corcairghorm"
+                    value="PLAY" onclick="playSound(audio6)" />
+                <audio id="audio6" src="static/audio/Corcairghorm.mp3"></audio>
+                <p class="right-page">16</p>
+            </div>
+
+            <div class="pages">
+                <div class="content">
+                    <h1 style="text-align: center">Puzzle No.1</h1>
+
+                    <!-- Puzzle No1-->
+                    <p>1. Drag and drop the names into the coloured blocks</p>
+                    <div id="colour-block">
+                        <div id="block-1" style="background-color:red" ondrop="drop(event)" ondragover="allowDrop(event)" name="red"></div>
+                        <div id="block-2" style="background-color:orangered" ondrop="drop(event)" ondragover="allowDrop(event)" name="orange"></div>
+                        <div id="block-3" style="background-color:yellow" ondrop="drop(event)" ondragover="allowDrop(event)" name="yellow"></div>
+                        <div id="block-4" style="background-color:green" ondrop="drop(event)" ondragover="allowDrop(event)" name="green"></div>
+                        <div id="block-5" style="background-color:skyblue" ondrop="drop(event)" ondragover="allowDrop(event)" name="blue"></div>
+                        <div id="block-6" style="background-color:midnightblue" ondrop="drop(event)" ondragover="allowDrop(event)" name="indego"></div>
+                        <div id="block-7" style="background-color:rgb(109, 92, 221)" ondrop="drop(event)" ondragover="allowDrop(event)" name="violet"></div>
+                    </div>
+                    <div id="colour-name">
+                        <div id="drag-6" draggable="true" ondragstart="drag(event)" name="indigo">Indeag&#243;</div>
+                        <div id="drag-2" draggable="true" ondragstart="drag(event)" name="orange">Or&#225;iste</div>
+                        <div id="drag-4" draggable="true" ondragstart="drag(event)" name="green">Glas</div>
+                        <div id="drag-3" draggable="true" ondragstart="drag(event)" name="yellow">Bu&#237;</div>
+                        <div id="drag-1" draggable="true" ondragstart="drag(event)" name="red">Dearg</div>
+                        <div id="drag-7" draggable="true" ondragstart="drag(event)" name="violet">Corcairghorm</div>
+                        <div id="drag-5" draggable="true" ondragstart="drag(event)" name="blue">Gorm</div>
+                    </div>
+
+                    <div style="clear:both"></div>
+                    <br/>
+                    <br/>
+                    <p>Your score is
+                        <span id="score">0</span> out of 7</p>
+                    <p class="left-page">17</p>
+                </div>
+            </div>
+            <!-- Puzzle No2-->
+            <div>
+                <h1 style="text-align: center">Puzzle No.2</h1>
+
+                <p>2. Hover over the card to see the picture</p>
+                <div class="container-P2">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                <p class="p2-colour-name">
+                                    <strong>Dearg</strong>
+                                </p>
+                            </div>
+                            <div class="back" style="background-color: red">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                <p class="p2-colour-name">
+                                    <strong>Bu&#237;</strong>
+                                </p>
+                            </div>
+                            <div class="back" style="background-color:yellow"></div>
+                        </div>
+                    </div>
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                <p class="p2-colour-name">
+                                    <strong>Gorm</strong>
+                                </p>
+                            </div>
+                            <div class="back" style="background-color:deepskyblue"></div>
+                        </div>
+                    </div>
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                <p class="p2-colour-name">
+                                    <strong>Or&#225;iste</strong>
+                                </p>
+                            </div>
+                            <div class="back" style="background-color:darkorange"></div>
+                        </div>
+                    </div>
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                <p class="p2-colour-name">
+                                    <strong>Glas</strong>
+                                </p>
+                            </div>
+                            <div class="back" style="background-color:green"></div>
+                        </div>
+                    </div>
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                <p class="p2-colour-name">
+                                    <strong>Indeag&#243;</strong>
+                                </p>
+                            </div>
+                            <div class="back" style="background-color:midnightblue"></div>
+                        </div>
+                    </div>
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                <p class="p2-colour-name">
+                                    <strong>Corcairghorm</strong>
+                                </p>
+                            </div>
+                            <div class="back" style="background-color:blueviolet"></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="right-page">18</p>
+            </div>
+            <!-- Puzzle No3-->
+            <div class="pages pages/20">
+                <div class="content">
+                    <h1 style="text-align: center">Puzzle No.3</h1>
+                    <p>3. Memory game - Click on the cards to match the pairs</p>
+                    <section class="score-panel">
+                        <ul class="stars">
+                            <li>
+                                <i class="fa fa-star"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star"></i>
+                            </li>
+                        </ul>
+
+                        <span class="moves">0</span> Move(s)
+
+                        <div class="timer">
+                        </div>
+
+                        <div class="restart" onclick=startGame()>
+                            <i class="fa fa-repeat"></i>
+                        </div>
+                    </section>
+
+                    <ul class="deck" id="card-deck">
+                        <li class="card" type="red_apples">
+                            <img src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/images/red_apples.jpg" alt="red_apples">
+                        </li>
+                        <li class="card" type="orange_fish">
+                            <img src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/images/orange_fish.jpg" alt="orange_fish">
+                        </li>
+                        <li class="card match" type="yellow_daffodil">
+                            <img src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/images/yellow_daffodil.jpg" alt="yellow_daffodil">
+                        </li>
+                        <li class="card" type="green_frog">
+                            <img src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/images/green_frog.jpg" alt="green_frog">
+                        </li>
+                        <li class="card" type="blue_box">
+                            <img src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/images/blue_box.jpg" alt="blue_box">
+                        </li>
+                        <li class="card match" type="yellow_daffodil">
+                            <img src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/images/yellow_daffodil.jpg" alt="yellow_daffodil">
+                        </li>
+                        <li class="card" type="indego_butterfly">
+                            <img src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/images/indego_butterfly.jpg" alt="indego_butterfly">
+                        </li>
+                        <li class="card" type="violet_hat">
+                            <img src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/images/violet_hat.jpg" alt="violet_hat">
+                        </li>
+                        <li class="card" type="red_apples">
+                            <img src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/images/red_apples.jpg">
+                        </li>
+                        <li class="card" type="shamrock">
+                            <img src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/images/shamrock.jpg" alt="shamrock">
+                        </li>
+                        <li class="card" type="indego_butterfly">
+                            <img src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/images/indego_butterfly.jpg" alt="indego_butterfly">
+                        </li>
+                        <li class="card" type="shamrock">
+                            <img src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/images/shamrock.jpg" alt="shamrock">
+                        </li>
+                        <li class="card open show" type="green_frog">
+                            <img src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/images/green_frog.jpg" alt="green_frog">
+                        </li>
+                        <li class="card" type="violet_hat">
+                            <img src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/images/violet_hat.jpg" alt="violet_hat">
+                        </li>
+                        <li class="card" type="orange_fish">
+                            <img src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/images/orange_fish.jpg" alt="orange_fish">
+                        </li>
+                        <li class="card" type="blue_box">
+                            <img src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/images/blue_box.jpg" alt="blue_box">
+                        </li>
+                    </ul>
+
+                    <div id="popup1" class="overlay">
+                        <div class="popup">
+                            <h2>Congratulations &#x2728;&#x2728;&#x2728;</h2>
+                            <a class="close" href=#>&#x2717;</a>
+                            <div class="content-1">
+                                Congratulations you're a winner &#x2728;&#x2728;&#x2728;
+                            </div>
+                            <div class="content-2">
+                                <p>You made
+                                    <span id=finalMove> </span> moves </p>
+                                <p>in
+                                    <span id=totalTime> </span>
+                                </p>
+                                <p>Rating:
+                                    <span id=starRating></span>
+                                </p>
+                            </div>
+                            <button id="play-again" onclick="playAgain()">
+                                Play again &#x2618;</a>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="left-page">19</p>
+                </div>
+            </div>
+
+            <div>
+                <img class="rainbow" src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/pages/rainbow.png" alt="rainbow" />
+                <h1 style="text-align: center; margin-top:-40px">The Rainbow</h1>
+                <p style="text-align: center; line-height: 1.35em; font-weight: bold">Rainbow, rainbow
+                    <br> In the sky,
+                    <br> peeping out
+                    <br> As the clouds go by,
+                    <br> Red, orange, yellow,
+                    <br> Green and blue,
+                    <br> There is indigo
+                    <br> And violet too.</p>
+                <img class="oisin-puzzle" src="https://irish-4-fun.s3-eu-west-1.amazonaws.com/pages/oisin_puzzle.png" alt="osisin puzzle page" />
+                <p class="right-page">20</p>
+            </div>
+
+            <div style="background-color:chartreuse"></div>
+
+            <!-- --------------------------------------------------------------------------------------------------------- -->
+        </div>
+        <!-- end flipbook div -->
+    </div>
+    <!-- end book-container -->
+</div>
+<!-- end flipbook-viewport -->
 {% endblock content %}

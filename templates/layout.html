@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {% block head %}{% endblock head %}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
   <link rel="shortcut icon" href="https://irish-4-fun.s3-eu-west-1.amazonaws.com/favicon.ico" type="image/x-icon">
   <!-- Compiled and minified CSS -->
@@ -26,7 +27,7 @@
           <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}"><i class="fa fa-home"></i> Home</a></li>
           {% if session.username %}
             <li class="nav-item"><a class="nav-link" href="{{ url_for('storybook') }}"><i class="fa fa-book-reader"></i> Storybook</a></li>	
-            <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-user-plus"></i> Profile</a></li>     
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('profile') }}"><i class="fa fa-user-plus"></i> Profile</a></li>     
             <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}"><i class="fa fa-user"></i> Logout</a></li>
             {% else %}
             <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}"><i class="fa fa-user"></i> Login</a></li>
@@ -72,10 +73,51 @@
     </div>
   </footer>
 </div>
+<script type="text/javascript">
+  function loadApp() {
+      // Create the flipbook
+      $('.flipbook').turn({
+          width: 922,
+          height: 650,
+          elevation: 50,
+          gradients: true,
+          autoCenter: true
+      });
+  }
+  // Load the HTML4 version if there's not CSS transform
+  yepnope({
+      test: Modernizr.csstransforms,
+      yep: ["{{ url_for('static', filename='lib/turn.js')}}"],
+      nope: ["{{ url_for('static', filename='lib/turn.html4.min.js')}}"],
+      both: ["{{ url_for('static', filename='css/basic.css')}}"],
+      complete: loadApp
+  });
+
+  function playSound(sound) {
+    var audio = document.getElementById('audio');
+    var audio1 = document.getElementById('audio1');
+    var audio2 = document.getElementById('audio2');
+    var audio3 = document.getElementById('audio3');
+    var audio4 = document.getElementById('audio4');
+    var audio5 = document.getElementById('audio5');
+    var audio6 = document.getElementById('audio6');
+  
+    if (sound == audio || 
+        sound == audio1 || 
+        sound == audio2 || 
+        sound == audio3 || 
+        sound == audio4 || 
+        sound == audio5 || 
+        sound == audio6) {
+      sound.play();
+    }
+  }  
+</script> 
     <!-- cdn links to bootstrap javascript -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename='js/script.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/puzzles.js')}}"></script>
   </body>
 </html>
