@@ -1,0 +1,21 @@
+# Editor generated files #
+######################
+.vscode/*
+.idea
+.venv
+venv/
+ENV/
+env.py
+env.*
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*.DS_Store
+
+
+# Python cache
+##############
+__pycache__
+.pyc

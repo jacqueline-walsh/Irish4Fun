@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Courier+Prime&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+nav {
+  background: linear-gradient(0deg, rgba(29,156,229,1) 0%, rgba(125,200,237,1) 100%);
+}
+
+img.logo {
+  width: 75%;
+}
+
+.navbar {
+  padding-bottom: 0;
+}
+
+.navbar-brand {
+  font-family: 'Courier Prime', monospace;
+  font-size: 2em;
+  padding-bottom: 0px;
+}
+
+.no4 {
+  font-size: 1.75em;
+  vertical-align: -6px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255,255,255,1);
+}
+
+.container {
+  margin-top: 40px;
+}
+
+#footer {
+  flex: 0 0 50px;
+  margin-top: auto;
+  padding: 25px;
+  background: linear-gradient(0deg, rgba(29,156,229,1) 0%, rgba(125,200,237,1) 100%);
+  color: #fff;
+}
+
+.social-media i {
+  color: #fff;
+}
+
+/* ************************************* home ************************************ */
+
+img.oisin {
+  width: 80%;
+  margin: 40px auto;
+}
+
+.btn-group { 
+  width: 26%;
+  margin-left: 26%;
+}
+
+.btn-custom {
+  background: linear-gradient(0deg, rgba(29,156,229,1) 0%, rgba(125,200,237,1) 100%);
+  color: #fff;
+}
+
+.btn-custom:hover {
+  background-image: linear-gradient(#54b4eb, #2fa4e7 60%, #1d9ce5);
+  box-shadow: 3px 3px 3px #666;
+  color: #fff;
+}
