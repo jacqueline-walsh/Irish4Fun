@@ -16,7 +16,11 @@ nav {
 }
 
 img.logo {
-  width: 75%;
+  width: 80%;
+}
+
+.mobile-text-only {
+  display: none;
 }
 
 .navbar {
@@ -57,7 +61,24 @@ img.logo {
 
 /* ************************************* home ************************************ */
 
-img.oisin {
-  width: 80%;
-  margin: auto;
+.oisin {
+  width: 100%;
+}
+
+/* ************************************* media queries ************************************ */
+
+@media (max-width: 550px) {
+
+  span.title-brand {
+    display: none;
+  }
+  img.logo {
+    width: 120%;
+  }  
+}
+
+@media (max-width: 991px) {
+  .mobile-text-only {
+    display: block;
+  }
 }
