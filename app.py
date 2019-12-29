@@ -3,14 +3,17 @@ import os
 from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
 from flask_bcrypt import Bcrypt
-import env as config
+# import env as config
 
 app = Flask(__name__)
 
 # configuration of Database
-app.config['MONGO_URI'] = config.MONGO_URI
-app.config['SECRET_KEY'] = config.SECRET_KEY
+# dev
+# app.config['MONGO_URI'] = config.MONGO_URI
+# app.config['SECRET_KEY'] = config.SECRET_KEY
 
+app.config['MONGO_URI'] = os.environ.get('MONGO_URI')
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
 bcrypt = Bcrypt(app)
 
@@ -96,4 +99,4 @@ def storybook():
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=os.environ.get('PORT'),
-            debug=True)
+            debug=False)
